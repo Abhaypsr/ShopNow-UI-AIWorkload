@@ -1,63 +1,107 @@
-## 🛍️ Simple ecommerce cart application [![CircleCI](https://circleci.com/gh/jeffersonRibeiro/react-shopping-cart.svg?style=svg)](https://circleci.com/gh/jeffersonRibeiro/react-shopping-cart)
+# ShopNow UI AI Workload
 
-<p align="center">
+A modern React + TypeScript shopping experience with product discovery, cart management, filtering, and an integrated chatbot assistant.
 
-  <img src="./readme-banner.png">
-</p>
+## Overview
 
-## Basic Overview - [Live Demo](https://react-shopping-cart-67954.firebaseapp.com/)
+ShopNow is a single-page storefront built with React and styled-components. The app displays products, allows users to filter and add items to the cart, and includes a chat overlay that connects to a local chat API for guided recommendations.
 
-<p align="left">
+## Features
 
-  <img src="./work-in-the-netherlands.png" width="380" height="90">
-</p>
+- Product grid with responsive layout
+- Category and price filtering
+- Cart drawer with add/remove functionality
+- Chatbot overlay for interactive assistance
+- GitHub corner and star button UI elements
+- Local product catalog sourced from `src/static/json/products.json`
 
-✈️ [Follow Jeremy Akeze](https://www.linkedin.com/in/jeremy-akeze-9542b396/)
+## Tech Stack
 
-This simple shopping cart prototype shows how React with Typescript, React hooks, react Context and Styled Components can be used to build a friendly user experience with instant visual updates and scaleable code in ecommerce applications.
+- React 18
+- TypeScript
+- styled-components
+- Axios
+- Firebase Hosting (deploy script)
+- React Scripts
+- Jest + React Testing Library
 
-#### Features
+## Getting Started
 
-- Add and remove products from the floating cart using Context Api
-- Filter products by available sizes using Context Api
-- Responsive design
+### Prerequisites
 
-<!--
-## Getting started
+- Node.js 14.17.3 (matching `package.json` engines)
+- npm
+- Optional: Firebase CLI for deploys
 
-Try playing with the code on CodeSandbox :)
+### Install dependencies
 
-[![Edit app](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/74rykw70qq)
- -->
-
-## Build/Run
-
-#### Requirements
-
-- Node.js
-- NPM
-
-```javascript
-
-/* First, Install the needed packages */
+```bash
 npm install
-
-/* Then start the React app */
-npm start
-
-/* To run the tests */
-npm run test
-
 ```
 
-### Copyright and license
+### Run locally
 
-The MIT License (MIT). Please see License File for more information.
+```bash
+npm start
+```
 
-<br/>
-<br/>
+Open `http://localhost:3000` to view the app.
 
-<p align="center"><img src="http://www.jeffersonribeiro.com/assets/img/apple-icon-180x180.png" width="35" height="35"/></p>
-<p align="center">
-<sub>A little project by <a href="http://www.jeffersonribeiro.com/">Jefferson Ribeiro</a></sub>
-</p>
+### Run tests
+
+```bash
+npm test
+```
+
+Watch mode:
+
+```bash
+npm run test:watch
+```
+
+Generate coverage:
+
+```bash
+npm run test:coverage
+```
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Deploy
+
+```bash
+npm run deploy
+```
+
+> Firebase deploy requires a configured Firebase project and valid `firebase.json` setup.
+
+## Chatbot Assistant
+
+The chatbot uses a local API endpoint at `http://127.0.0.1:8000/chat`.
+If no backend is available, the chat window will display an error message.
+
+## Project Structure
+
+- `src/components` — UI components for App, Cart, Products, Filter, Chatbot, Loader, GitHub links
+- `src/contexts` — React context providers for products and cart state
+- `src/services` — product data loading and API helpers
+- `src/static/json/products.json` — seed product data
+- `src/utils` — shared utilities like price formatting
+
+## Notes
+
+- The chatbot is implemented in `src/components/Chatbot/Chatbot.tsx`
+- Product fetching is handled through `useProducts` and a local JSON data source
+- Cart state is managed with context hooks in `src/contexts/cart-context`
+
+## Contributing
+
+Contributions are welcome. Open issues or submit pull requests for bug fixes, improvements, or feature additions.
+
+## License
+
+This repository does not currently include a license file.
